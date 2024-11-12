@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Machine Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="atm-screen">
+        <h1>ATM Machine</h1>
+
+        <!-- PIN Entry Screen -->
+        <div id="pin-screen" class="screen">
+            <h2>Enter Your PIN</h2>
+            <input type="password" id="pin-input" maxlength="4" placeholder="****">
+            <button onclick="validatePin()" class="sub-btn">Submit</button>
+        </div>
+
+        <!-- Main ATM Screen -->
+        <div id="main-screen" class="screen hidden">
+            <div id="balance-display">Balance: $0</div>
+            <div id="amount-display">Enter Amount</div>
+
+            <div class="keypad">
+                <button onclick="enterNumber(1)">1</button>
+                <button onclick="enterNumber(2)">2</button>
+                <button onclick="enterNumber(3)">3</button>
+                <button onclick="enterNumber(4)">4</button>
+                <button onclick="enterNumber(5)">5</button>
+                <button onclick="enterNumber(6)">6</button>
+                <button onclick="enterNumber(7)">7</button>
+                <button onclick="enterNumber(8)">8</button>
+                <button onclick="enterNumber(9)">9</button>
+                <button onclick="clearAmount()">C</button>
+                <button onclick="enterNumber(0)">0</button>
+                <button onclick="backspace()">⌫</button>
+            </div>
+
+            <div class="button-container">
+                <button onclick="processTransaction('deposit')">Deposit</button>
+                <button onclick="processTransaction('withdraw')">Withdraw</button>
+                <button onclick="checkBalance()">Check Balance</button>
+            </div>
+
+            <p id="message"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
